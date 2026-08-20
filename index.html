@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Seba Llach · Conferencias sobre Cultura de Servicio, Customer Experience, Estrategia, Foco y Ejecución." />
+  <title>Seba Llach · Conferencias</title>
+  <style>
+    :root{
+      --bg:#0b0d0f; --bg2:#111519; --paper:#f5f4f0; --ink:#101418;
+      --muted:#9aa3aa; --line:rgba(255,255,255,.12); --green:#31d49c; --green2:#16b984;
+      --radius:28px; --max:1180px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:#fff;line-height:1.5}
+    a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
+    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .nav{position:fixed;inset:0 0 auto 0;z-index:50;background:linear-gradient(to bottom,rgba(8,10,12,.92),rgba(8,10,12,.45),transparent);backdrop-filter:blur(8px);transition:.25s}
+    .nav-inner{height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .wordmark{font-family:Georgia,"Times New Roman",serif;font-size:28px;letter-spacing:-1.2px;position:relative;white-space:nowrap}
+    .wordmark:after{content:"";position:absolute;height:2px;background:var(--green);left:43%;right:2%;bottom:-2px;border-radius:100%;transform:rotate(-2deg)}
+    .nav-links{display:flex;gap:24px;font-size:14px;color:#d7dadd}
+    .nav-links a:hover{color:var(--green)}
+    .cta{display:inline-flex;align-items:center;gap:9px;padding:12px 18px;border-radius:999px;background:var(--green);color:#07100d;font-weight:800;border:none;cursor:pointer}
+    .cta.secondary{background:transparent;color:#fff;border:1px solid var(--line)}
+    .hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;overflow:hidden;background:#060708}
+    .hero-media{position:absolute;inset:0}
+    .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 28%;filter:saturate(.95) contrast(1.03)}
+    .hero-media:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.02) 25%,rgba(0,0,0,.28) 58%,rgba(5,7,8,.98) 94%),linear-gradient(to right,rgba(0,0,0,.08),transparent 55%)}
+    .hero-content{position:relative;z-index:2;padding:150px 0 72px;width:100%}
+    .hero-bottom{max-width:880px}
+    .hero-logo{font-family:Georgia,"Times New Roman",serif;font-size:clamp(54px,8vw,112px);line-height:.95;letter-spacing:-4px;position:relative;display:inline-block;margin-bottom:30px}
+    .hero-logo:after{content:"";position:absolute;left:40%;right:0;bottom:-11px;height:4px;background:linear-gradient(90deg,transparent,var(--green));border-radius:50%;transform:rotate(-2deg)}
+    .hero h1{font-size:clamp(34px,4.7vw,68px);line-height:1.02;margin:0 0 20px;letter-spacing:-2.4px;max-width:840px}
+    .hero .topics{font-size:clamp(16px,2vw,22px);color:#e6e7e8}.hero .topics span{color:var(--green)}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    section{padding:110px 0}
+    .eyebrow{color:var(--green);text-transform:uppercase;letter-spacing:.08em;font-size:13px;font-weight:850;margin-bottom:14px}
+    .section-title{font-size:clamp(38px,5vw,72px);line-height:1.02;letter-spacing:-2.5px;margin:0 0 28px}
+    .lead{font-size:clamp(19px,2.2vw,28px);color:#c8cdd1;max-width:920px}
+    .impact{background:var(--paper);color:var(--ink)} .impact .lead{color:#4c555c}
+    .impact-photo{margin:54px 0 28px;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/7;position:relative}
+    .impact-photo img{width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:brightness(.78)}
+    .impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+    .impact-card{padding:28px;border:1px solid #d8dbdc;border-radius:24px;background:#fff;transition:.25s}
+    .impact-card:hover{transform:translateY(-5px);box-shadow:0 14px 35px rgba(0,0,0,.08)}
+    .impact-card h3{font-size:22px;margin:0 0 10px}.impact-card p{margin:0;color:#667078}
+    .quote{font-size:clamp(26px,3vw,42px);font-weight:850;margin-top:42px;letter-spacing:-1px}.quote:before,.quote:after{color:var(--green);font-family:Georgia,serif}.quote:before{content:'“'}.quote:after{content:'”'}
+    .profile{background:#fff;color:var(--ink)}
+    .profile-grid{display:grid;grid-template-columns:.82fr 1.35fr;gap:70px;align-items:stretch}
+    .profile-photo{border-radius:28px;overflow:hidden;min-height:670px;position:relative;background:#ddd}
+    .profile-photo img{width:100%;height:100%;object-fit:cover;object-position:center center}
+    .profile-panel{display:flex;flex-direction:column;justify-content:center}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:44px 0;padding-bottom:32px;border-bottom:1px solid #d8dcde}
+    .stat strong{display:block;color:var(--green2);font-size:48px;line-height:1}.stat span{font-size:13px;font-weight:800;text-transform:uppercase}
+    .timeline{display:grid;gap:16px}.timeline div{display:flex;gap:14px;align-items:flex-start}.dot{width:9px;height:9px;border-radius:2px;background:var(--green);margin-top:8px;flex:0 0 auto}
+    .conference{position:relative;overflow:hidden}.conference:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,9,10,.96) 0 45%,rgba(7,9,10,.4) 72%,rgba(7,9,10,.72));z-index:1}
+    .conference .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%}
+    .conference .container{position:relative;z-index:2}
+    .conference .section-title{max-width:800px}.conference .sub{font-size:22px;color:var(--green);font-weight:800;margin-bottom:28px}
+    .conference .pain{max-width:800px;font-size:clamp(24px,3.2vw,42px);font-weight:800;line-height:1.15;margin:26px 0;padding-left:22px;border-left:5px solid var(--green)}
+    .conference .desc{max-width:800px;color:#e0e3e5;font-size:19px}
+    .meta-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:38px;max-width:860px}
+    .meta{padding:22px;border:1px solid var(--line);border-radius:22px;background:rgba(12,15,17,.56);backdrop-filter:blur(8px)}.meta b{color:var(--green);display:block;margin-bottom:9px;text-transform:uppercase;font-size:13px}
+    .content-section{background:var(--paper);color:var(--ink)}
+    .pillars{display:grid;gap:0;margin-top:42px;border-top:1px solid #d7d9da}
+    .pillar{display:grid;grid-template-columns:70px 1.1fr 1.5fr;gap:26px;padding:28px 0;border-bottom:1px solid #d7d9da;align-items:start;cursor:pointer;transition:.2s}
+    .pillar:hover{padding-left:10px}.num{font-size:20px;color:var(--green2);font-weight:900}.pillar h3{margin:0;font-size:20px}.pillar p{margin:0;color:#5e686f}
+    .takeaway{margin-top:45px;padding:28px 32px;border-radius:24px;background:#fff;border:1px solid #d9dcdd;box-shadow:0 10px 30px rgba(0,0,0,.05)}
+    .takeaway-row{display:grid;grid-template-columns:210px 1fr;gap:22px;align-items:stretch;margin-top:45px}.takeaway-row .takeaway{margin-top:0}.brochure-detail{margin:0;border-radius:22px;overflow:hidden;min-height:150px}.brochure-detail img{width:100%;height:100%;object-fit:cover}.takeaway-row.objectives{grid-template-columns:280px 1fr}
+    .conference.two:before{background:linear-gradient(90deg,rgba(7,9,10,.92),rgba(7,9,10,.52) 55%,rgba(7,9,10,.78))}
+    .method{background:#fff;color:var(--ink)}
+    .method-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:44px}
+    .method-card{padding:24px 18px;border:1px solid #d9dcde;border-radius:20px;background:#fafafa;min-height:180px}.method-card strong{font-size:38px;color:var(--green2)}.method-card h3{margin:8px 0;font-size:18px}.method-card p{font-size:14px;color:#606b72;margin:0}
+    .contact{padding:120px 0 70px;background:radial-gradient(circle at 72% 20%,rgba(49,212,156,.12),transparent 28%),#0b0d0f}
+    .contact-box{margin-top:40px;border:1px solid var(--line);border-radius:30px;padding:36px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}.contact-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+    .gruposet{font-size:42px;font-weight:800}.gruposet .set{color:var(--green)}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}.reveal.visible{opacity:1;transform:none}
+    .backtop{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border:1px solid var(--line);border-radius:50%;background:#1118;color:#fff;display:grid;place-items:center;z-index:60;opacity:0;pointer-events:none;transition:.2s;backdrop-filter:blur(6px)}.backtop.show{opacity:1;pointer-events:auto}
+    @media(max-width:900px){.nav-links{display:none}.profile-grid{grid-template-columns:1fr}.profile-photo{min-height:520px}.impact-grid,.method-grid{grid-template-columns:1fr}.pillar{grid-template-columns:48px 1fr}.pillar p{grid-column:2}.meta-grid{grid-template-columns:1fr}.takeaway-row,.takeaway-row.objectives{grid-template-columns:1fr}.brochure-detail{max-height:300px}.contact-box{grid-template-columns:1fr}.hero-content{padding-bottom:48px}.conference:before{background:linear-gradient(to bottom,rgba(7,9,10,.52),rgba(7,9,10,.95) 58%)}.conference .bg{object-position:62% center}.stats{grid-template-columns:1fr 1fr 1fr}.container{width:min(var(--max),calc(100% - 28px))}}
+    @media(max-width:560px){section{padding:80px 0}.hero-logo{letter-spacing:-2px}.stats{gap:10px}.stat strong{font-size:36px}.profile-photo{min-height:460px}.impact-photo{aspect-ratio:4/3}.method-card{min-height:auto}.nav-inner{height:66px}}
+  </style>
+</head>
+<body>
+  <header class="nav"><div class="container nav-inner"><a href="#inicio" class="wordmark">Seba Llach</a><nav class="nav-links"><a href="#impacto">Impacto</a><a href="#perfil">Perfil</a><a href="#cultura">Cultura de Servicio</a><a href="#objetivos">Objetivos</a></nav><a class="cta" href="#contacto">Conversemos</a></div></header>
+
+  <main>
+    <section class="hero" id="inicio"><div class="hero-media"><img src="assets/hero.jpg" alt="Seba Llach dando una conferencia"></div><div class="container hero-content"><div class="hero-bottom reveal"><div class="hero-logo">Seba Llach</div><h1>Ideas que se convierten en sistemas que funcionan.</h1><div class="topics">Cultura de Servicio &amp; Customer Experience <span>|</span> Estrategia, Foco y Ejecución</div><div class="hero-actions"><a class="cta" href="#cultura">Ver conferencias</a><a class="cta secondary" href="#perfil">Conocer mi enfoque</a></div></div></div></section>
+
+    <section class="impact" id="impacto"><div class="container"><div class="eyebrow reveal">La propuesta</div><h2 class="section-title reveal">Inspirar es solo el principio.</h2><p class="lead reveal">Una buena conferencia puede emocionar durante una hora. El verdadero valor aparece cuando, al día siguiente, las personas saben qué observar, qué conversación iniciar y qué cambiar.</p><div class="impact-photo reveal"><img src="assets/speaker.jpg" alt="Seba Llach trabajando con equipos"></div><div class="impact-grid"><article class="impact-card reveal"><h3>Conectar</h3><p>Historias y ejemplos que vuelven cercana una idea compleja.</p></article><article class="impact-card reveal"><h3>Ordenar</h3><p>Modelos claros que crean un lenguaje común en la organización.</p></article><article class="impact-card reveal"><h3>Activar</h3><p>Preguntas y herramientas para convertir inspiración en próximos pasos.</p></article></div><div class="quote reveal">El evento termina. La conversación recién empieza.</div></div></section>
+
+    <section class="profile" id="perfil"><div class="container profile-grid"><div class="profile-photo reveal"><img src="assets/profile.jpg" alt="Seba Llach trabajando con un equipo"></div><div class="profile-panel"><div class="eyebrow reveal">Perfil</div><h2 class="section-title reveal">Una mirada que une cultura, cliente y ejecución.</h2><p class="lead reveal">Seba combina experiencia corporativa, emprendedora y consultiva. Su trabajo parte de una pregunta incómoda pero útil: ¿cómo hacemos para que aquello que todos consideran importante deje de depender de la voluntad individual?</p><div class="stats reveal"><div class="stat"><strong>+15</strong><span>Años en gestión</span></div><div class="stat"><strong>3</strong><span>Miradas integradas</span></div><div class="stat"><strong>1</strong><span>Obsesión: aplicar</span></div></div><div class="eyebrow reveal">Trayectoria y formación</div><div class="timeline"><div class="reveal"><i class="dot"></i><span>Contador Público, Universidad Nacional de Cuyo.</span></div><div class="reveal"><i class="dot"></i><span>Experiencia a nivel corporativo y PyME.</span></div><div class="reveal"><i class="dot"></i><span>Consultor de GrupoSet Latam y empresario del sector retail.</span></div><div class="reveal"><i class="dot"></i><span>Formación en Cultura de Servicio, Experiencia del Cliente, metodologías ágiles y OKRs.</span></div><div class="reveal"><i class="dot"></i><span>Management Japonés · Modelo Toyota, AOTS Japón.</span></div><div class="reveal"><i class="dot"></i><span>Experiencia docente y en entrenamiento de equipos de trabajo.</span></div></div></div></div></section>
+
+    <section class="conference" id="cultura"><img class="bg" src="assets/culture.jpg" alt="Conferencia Modelo de Cultura de Servicio"><div class="container"><div class="eyebrow reveal">Conferencia 01</div><h2 class="section-title reveal">Modelo de Cultura de Servicio</h2><div class="sub reveal">Basado en aprendizajes del modelo Disney</div><div class="pain reveal">La experiencia no depende de personas extraordinarias. Depende de un sistema que ayude a personas reales a actuar de manera extraordinaria.</div><p class="desc reveal"><strong>Cuando la experiencia depende de la buena voluntad de cada persona, el cliente recibe una empresa diferente en cada interacción.</strong><br><br>Una conferencia práctica para comprender cómo construir una cultura de servicio que transforme propósito, estándares y valores en comportamientos concretos y consistentes. Porque una cultura sólida reduce la improvisación, alinea decisiones y hace que la experiencia deje de depender de esfuerzos individuales.</p><div class="meta-grid"><div class="meta reveal"><b>Ideal para</b>Líderes · CX · RR.HH. · Comercial · Operaciones · Equipos de atención</div><div class="meta reveal"><b>Formatos</b>Keynote 60–90 min · Conferencia interactiva 2 h · Workshop 4–6 h</div></div></div></section>
+
+    <section class="content-section"><div class="container"><div class="eyebrow reveal">Contenido</div><h2 class="section-title reveal">De la buena voluntad a una forma compartida de hacer las cosas.</h2><p class="lead reveal" style="color:#5d666c">La charla recorre cinco pilares para que la audiencia pueda mirar su propia organización con otros ojos.</p><div class="pillars"><div class="pillar reveal"><span class="num">01</span><h3>Propósito que guía</h3><p>El para qué deja de ser una frase y se convierte en criterio de decisión.</p></div><div class="pillar reveal"><span class="num">02</span><h3>Cultura como sistema operativo</h3><p>Lo que la organización tolera, reconoce y repite termina definiendo la experiencia.</p></div><div class="pillar reveal"><span class="num">03</span><h3>Estándares y comportamientos</h3><p>Seguridad, cortesía, show, eficiencia e inclusión traducidos a acciones observables.</p></div><div class="pillar reveal"><span class="num">04</span><h3>Diseño de momentos y recupero</h3><p>Cada contacto puede ser diseñado. Cada error puede convertirse en confianza.</p></div><div class="pillar reveal"><span class="num">05</span><h3>Liderazgo que sostiene</h3><p>La experiencia del cliente comienza en la experiencia cotidiana del equipo.</p></div></div><div class="takeaway-row"><figure class="brochure-detail reveal"><img src="assets/culture_detail.jpg" alt="Dinámica de trabajo sobre cultura de servicio"></figure><div class="takeaway reveal"><div class="eyebrow">La audiencia se lleva</div><strong>Un lenguaje común · Una guía de diagnóstico · Preguntas para revisar la experiencia · Un primer mapa de acciones</strong></div></div></div></section>
+
+    <section class="conference two" id="objetivos"><img class="bg" src="assets/objectives.jpg" alt="Conferencia Objetivos que importan"><div class="container"><div class="eyebrow reveal">Conferencia 02</div><h2 class="section-title reveal">Objetivos que importan</h2><div class="sub reveal">Cómo convertir estrategia en foco, decisiones y ejecución</div><div class="pain reveal">Cuando todo es prioridad, nada es prioridad.</div><p class="desc reveal">Muchas organizaciones no tienen un problema de falta de objetivos. Tienen demasiados frentes abiertos, prioridades que compiten entre sí y equipos que conocen la estrategia pero no siempre saben qué deberían hacer diferente esta semana.<br><br>Esta conferencia propone una forma simple de convertir estrategia en prioridades, responsabilidades, indicadores y conversaciones de seguimiento que ayuden a decidir y ejecutar mejor. <strong>El objetivo no es llenar una planilla de OKRs. Es lograr que las personas sepan qué importa, qué hacer y cómo saber si están avanzando.</strong></p><div class="meta-grid"><div class="meta reveal"><b>Ideal para</b>Dueños · Directorios · Líderes · Equipos de planificación · Mandos medios</div><div class="meta reveal"><b>Formatos</b>Keynote 60–90 min · Conferencia interactiva 2 h · Workshop 4–6 h</div></div></div></section>
+
+    <section class="method"><div class="container"><div class="eyebrow reveal">Del plan anual a las decisiones de cada semana</div><h2 class="section-title reveal">Menos decoración. Más dirección.</h2><div class="method-grid"><article class="method-card reveal"><strong>1</strong><h3>Diferenciar</h3><p>Intención, objetivo, resultado clave, indicador y tarea.</p></article><article class="method-card reveal"><strong>2</strong><h3>Priorizar</h3><p>Pocas metas relevantes en lugar de una lista infinita de deseos.</p></article><article class="method-card reveal"><strong>3</strong><h3>Alinear</h3><p>Conectar estrategia, equipos y responsabilidades sin perder velocidad.</p></article><article class="method-card reveal"><strong>4</strong><h3>Seguir</h3><p>Instalar una cadencia breve de revisión, aprendizaje y corrección.</p></article><article class="method-card reveal"><strong>5</strong><h3>Conversar</h3><p>Usar los objetivos para mejorar decisiones y no para castigar desvíos.</p></article></div><div class="takeaway-row objectives"><figure class="brochure-detail reveal"><img src="assets/objectives_detail.jpg" alt="Equipo trabajando sobre objetivos y prioridades"></figure><div class="takeaway reveal"><div class="eyebrow">La audiencia se lleva</div><strong>Un mapa para redactar objetivos · Criterios de priorización · Una lógica simple de seguimiento · Conversaciones más útiles</strong></div></div></div></section>
+
+    <section class="contact" id="contacto"><div class="container"><div class="wordmark reveal" style="font-size:42px">Seba Llach</div><h2 class="section-title reveal" style="margin-top:38px">El evento termina.<br>La conversación recién empieza.</h2><p class="lead reveal">Cada conferencia puede adaptarse al desafío de la organización, al perfil de la audiencia y al resultado que el evento necesita provocar.</p><div class="gruposet reveal">grupo<span class="set">set</span></div><div class="contact-box reveal"><div><div class="eyebrow">Conversemos sobre tu próximo evento</div><h3 style="font-size:30px;margin:6px 0">WhatsApp +54 9 260 464 0214</h3><div style="color:#b9c0c5">gruposetlatam.com</div><div class="contact-links"><a class="cta" target="_blank" rel="noopener" href="https://wa.me/5492604640214">Abrir WhatsApp</a><a class="cta secondary" target="_blank" rel="noopener" href="https://www.instagram.com/seballach">@seballach</a><a class="cta secondary" target="_blank" rel="noopener" href="https://www.instagram.com/gruposetlatam">@gruposetlatam</a></div></div><div style="font-size:54px;color:var(--green)">↗</div></div><div style="margin-top:55px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#9ba4aa;font-size:13px"><span>MODELO DE CULTURA DE SERVICIO · Basado en aprendizajes del modelo Disney</span><span>OBJETIVOS QUE IMPORTAN · Estrategia, foco y ejecución</span></div></div></section>
+  </main>
+  <button class="backtop" aria-label="Volver arriba">↑</button>
+  <script>
+    const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    const back=document.querySelector('.backtop');
+    addEventListener('scroll',()=>back.classList.toggle('show',scrollY>700));
+    back.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+    document.querySelectorAll('.pillar').forEach(p=>p.addEventListener('click',()=>p.classList.toggle('open')));
+  </script>
+</body>
+</html>
