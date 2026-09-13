@@ -1,14 +1,7 @@
-# Seba Llach · Web de Conferencias v2
+# Seba Llach · Web de Conferencias v5
 
-Versión alineada fotográficamente con el brochure.
+Cambio principal: el bloque visual de la sección Perfil ahora reproduce el video adjunto en autoplay, sin audio, en loop y compatible con iPhone (`playsinline`).
 
-## Correspondencia de imágenes
-- Portada: misma foto de hoja 1.
-- Impacto: misma foto de hoja 2.
-- Perfil: misma foto de hoja 3.
-- Modelo de Cultura de Servicio: misma foto de hoja 4.
-- Contenido Cultura: misma foto detalle de hoja 5.
-- Objetivos que importan: misma foto de hoja 6.
-- Metodología de objetivos: misma foto de hoja 7.
+El archivo `assets/perfil-video.mp4` fue exportado sin pista de audio y optimizado para web.
 
-Subir `index.html` y la carpeta `assets` manteniendo esta estructura.
+Para actualizar Render, subir/reemplazar `index.html` y toda la carpeta `assets` conservando la estructura.
